@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap");
+
+body {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  font-family: "Wix Madefor Display", sans-serif;
+}
+
+.grid-container {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  width: 250px; /* Adjust the width to make it square */
+  height: 250px; /* Adjust the height to make it square */
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.grid-item {
+  border: 2px solid #15198f;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  line-height: 1; /* Ensure the content doesn't affect the height */
+  transition: background-color 0.3s ease;
+}
+
+.grid-item.dead {
+  background-color: black;
+}
+
+.grid-buttons {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 2px 4px;
+}
+
+#numericInput {
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 50px;
+}
+.grid-buttons button,
+.input button {
+  background-color: #346ad2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#nextTextSequence {
+  width: 80%;
+}
+
+.grid-buttons button:last-child {
+  margin-top: 20px;
+}
+
+#blues,
+#tip {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+#nextSequence,
+#nextTextSequence {
+  margin-top: 10px;
+  font-size: 24px;
+  display: flex;
+}
