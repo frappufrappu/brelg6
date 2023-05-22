@@ -65,7 +65,7 @@ body {
 .grid-buttons button,
 .input button {
   background-color: #346ad2;
-  color: white;
+  color: #f8f9fa;
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -96,7 +96,7 @@ body {
 }
 
 #by {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 12px;
 }
 
