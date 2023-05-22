@@ -19,7 +19,7 @@ const textSequence = [
   "If the group doesn't push fast enough to get to 2nd shapes here, just spread the meteors top and you'll be fine.",
   "Always look at the glow on the tiles to make sure you don't break more than 3!",
   "...",
-  '"peer pressure is cyber bullying"',
+  '"peer pressure is cyber bullying" -Aiyo',
   "...",
   '"there is no I in team"',
   "...",
