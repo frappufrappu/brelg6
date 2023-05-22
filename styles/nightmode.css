@@ -57,7 +57,7 @@
 .nightMode {
   display: flex;
   justify-content: start;
-  width: 100%;
+  width: 100vh;
   margin-bottom: -20px;
   padding-top: 5px;
   padding-left: 20px;
