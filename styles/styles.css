@@ -91,6 +91,12 @@ body {
   font-size: 14px;
 }
 
+#by {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
 #nextSequence,
 #nextTextSequence {
   margin-top: 10px;
