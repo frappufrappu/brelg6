@@ -1,12 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap");
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #f8f9fa;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  min-height: 100%;
   margin: 0;
   font-family: "Wix Madefor Display", sans-serif;
 }
@@ -75,6 +79,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border: solid 1px red;
 }
 
 #nextTextSequence {
@@ -92,7 +97,7 @@ body {
 }
 
 #by {
-  margin-top: 30px;
+  margin-top: 50px;
   font-size: 12px;
 }
 
