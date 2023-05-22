@@ -25,7 +25,7 @@ const textSequence = [
   "...",
   "You still here? lol",
   "...",
-  "burp",
+  "!burp",
   "...",
   ,
   ,
