@@ -50,9 +50,11 @@ body {
     font-size: 16px;
     margin-top: 15px;
     padding: 2px 4px;
-    color: #5e5e66;
+    
     }
-input {
+
+    
+#numericInput {
 	border-radius: 4px;
   padding: 8px 16px;
   font-size: 10px;
@@ -71,6 +73,12 @@ input {
   margin-top: 10px;
 }
 
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 .grid-buttons button:last-child {
   margin-top: 20px;
 }
@@ -78,19 +86,91 @@ input {
 #blues,#tip {
 	margin-top: 20px;
     font-size: 14px;
-    color: #5e5e66;
+    
     }
 
 #nextSequence, #nextTextSequence{
       margin-top: 10px;
       font-size: 24px;
       display: flex;
-      color: #5e5e66;
+      
     }
+    
+     /* CSS styles for the switch toggle */
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #5e5e66;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    .night:checked + .toggle-slider {
+      background-color: #f8f9fa;
+    }
+
+    .night:focus + .toggle-slider {
+      box-shadow: 0 0 1px #f8f9fa;
+    }
+
+    .night:checked + .toggle-slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* End of switch toggle styles */
+    
+    .nightMode {
+    	display: flex;
+        justify-content: start;
+        width: 100%;
+        margin-bottom: -20px;
+        
+        }
+    
   </style>
 </head>
 <body>
-<div class="input">
+<div class="nightMode">
+  <label class="toggle-switch">
+    <input type="checkbox" class="night" id="toggleCheckbox">
+    <span class="toggle-slider"></span>
+  </label>
+</div>
+
+<div class="input" id="textOne">
   <label for="numericInput" class="input">Respawn timer (seconds):</label>
   <input type="number" id="numericInput">
   <button class="input-button" id="saveButton">Save</button>
@@ -104,11 +184,12 @@ input {
     <button id="resetButton">Reset</button>
   </div>
 	
-    <span id="blues">Next blues:</span>
+    <div class="container" id="textTwo">
+     <span id="blues">Next blues:</span>
 	 <span id="nextSequence"></span>
      <span id="tip">Tip:</span>
 	 <span id="nextTextSequence"></span>
-
+	</div>
   <script>
     // JavaScript code to generate the grid items
     const gridContainer = document.getElementById('gridContainer');
@@ -122,7 +203,16 @@ input {
     const nextTextSequenceElement = document.getElementById('nextTextSequence');
     const sequence = [2, 3, 4, 3, 4, 3, 4,3,4,3,4,3,4,3,4,3,4]; // The sequence array
     const textSequence = ["The first set of blue meteors, they usually go in 5 and 7","This set should be spread bottom, on 5, 6 and 7. The party should push below 138 after this set to drop golden meteor at the bottom immediatly (click Bot Golden after placing this set).","The bottom tiles shouldn't be up yet so we have to make sure we don't break anything with this 4 meteors. We usually drop two at 11, or 1, one at 12, and the last one on the remaining top tile (most of the times it will be double 11, 12, and 1). Shandi mech should happen after this.","Once the worship mechanic is over, stay near top and break either 1 or 11 stacking these three meteors. The group should quiclky push below 88 after this to get the next top golden meteor (Click on Top Golden after placing all three).","After this, you can be flexible or follow the spread and break pattern, groups usually have good damage now, but to be sure, drop two at 5 and two at 7.","Now we stack all three on 5 or 7 and push to drop the last golden meteor at 6.","If the group doesn't push fast enough to get to 2nd shapes here, just spread the meteors top and you'll be fine.","Always look at the glow on the tiles to make sure you don't break more than 3!",,"'peer pressure is cyber bullying'",,"'there is no I in team'",,"You still here ?lol",,"burp",,,,,,,]
+    
+    const toggleCheckbox = document.getElementById('toggleCheckbox');
+    const bodyElement = document.body;
+    const contentDivOne = document.getElementById('textOne');
+    const contentDivTwo = document.getElementById('textTwo');
+    contentDivOne.style.color = '#5e5e66';
+    contentDivTwo.style.color = '#5e5e66';
+    
     let sequenceIndex = 0;
+    
     let clickCount = 0;
 	let savedValue=5000;
     
@@ -291,6 +381,19 @@ input {
         tile.style.backgroundColor = 'black'; // Set tile color to black when HP reaches 0
       }
     }
+    
+    toggleCheckbox.addEventListener('change', () => {
+      if (toggleCheckbox.checked) {
+        bodyElement.style.backgroundColor = '#242426';
+        contentDivOne.style.color = '#f8f9fa';
+        contentDivTwo.style.color = '#f8f9fa';
+      } else {
+        bodyElement.style.backgroundColor = '#f8f9fa';
+        contentDivOne.style.color = '#5e5e66';
+        contentDivTwo.style.color = '#5e5e66';
+      }
+    });
+    
   </script>
 </body>
 </html>
