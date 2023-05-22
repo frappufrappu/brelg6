@@ -1,5 +1,6 @@
 # brelg6
 Rudimentary minigame to learn meteor placement in brel g6
+
 Web view: https://frappufrappu.github.io/brelg6/
 
 - The toggle top left turns on/off night mode
